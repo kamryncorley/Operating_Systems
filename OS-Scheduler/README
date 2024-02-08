@@ -1,1 +1,40 @@
 Process Scheduling Algorithms Simulator
+This repository contains a simulator for various process scheduling algorithms, developed as part of a university project. 
+The simulator is implemented in C and demonstrates the functionality of different scheduling algorithms on a predefined set 
+of tasks, each with a specific priority and CPU burst time.
+
+Project Overview
+The purpose of this simulator is to explore and understand the workings of various scheduling algorithms within operating 
+systems. Each task in the simulation is defined by its name, priority, and CPU burst duration, and is managed through a 
+linked list data structure. The project implements the following scheduling algorithms:
+
+First-Come, First-Served (FCFS): Tasks are scheduled in the order they arrive. 
+Shortest-Job-First (SJF): Tasks are scheduled based on the shortest CPU burst time. 
+Priority Scheduling: Tasks are scheduled according to their priority level. 
+Round-Robin (RR) Scheduling: Each task is assigned a time quantum and scheduled in a round-robin fashion. 
+Priority with Round-Robin: A combination of priority scheduling and round-robin for tasks with equal priority.
+
+Getting Started
+
+Prerequisites
+Ensure you have a C compiler installed on your system, such as gcc or clang.
+
+Compilation
+A Makefile is provided for easy compilation of the project. To compile a specific scheduler, use the following command, 
+replacing [SCHEDULER] with the desired scheduler (e.g., fcfs, sjf, priority, rr, priority_rr):
+make [SCHEDULER]
+
+Running the Simulator
+After compilation, run the simulator with:
+./scheduler
+
+Implementation Details
+driver.c: Reads the schedule of tasks and inserts each task into a linked list. 
+schedule.c: Contains the schedule() function that executes each task according to the specified scheduling algorithm. 
+cpu.c: Defines the run() function that simulates executing a task on the CPU. 
+task.h: Defines the structure for a task. 
+Tasks are selected for execution using the pickNextTask() function, which varies based on the scheduling algorithm being used.
+
+Acknowledgments
+Thanks to the University of Washington for providing the framework and guidance for this project. 
+Special thanks to Professor Dimpsey for their invaluable input and support throughout the development process.
